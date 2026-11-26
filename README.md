@@ -26,6 +26,12 @@ make mac-run
 
 也可以用 Xcode 打开根目录的 `IppleMusicMac.xcodeproj`，选择 `IppleMusicMac` 并按 `⌘R`。应用打开后，用手机 QQ 扫描登录页的二维码，在手机上核对账号与授权信息后确认。下次启动时，应用会尝试恢复登录。
 
+### 生成 DMG 安装包
+
+在仓库根目录运行 `make mac-package`。命令会构建 Release 版、打包并校验磁盘映像，结果位于 `.local/dist/mac/`。文件名包含版本号及构建架构（Apple 芯片为 `arm64`，Intel 为 `x86_64`）。
+
+打开 DMG，将 **Ipple Music** 拖入 **Applications（应用程序）** 即可安装。默认使用本机临时签名，未经 Apple 公证。
+
 ## 🔒 隐私与安全
 
 **项目维护者不会通过本应用收集你的个人信息，也没有用于存储用户数据的项目服务器。** 播放器自身保存的数据均位于你的 Mac。应用没有接入使用统计、广告追踪或崩溃上报服务。
