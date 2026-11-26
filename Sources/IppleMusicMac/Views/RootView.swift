@@ -297,10 +297,10 @@ struct RootView: View {
 
     private func preloadArtwork(_ preloads: [(track: LibraryTrack, identity: String)]) async {
         guard !Task.isCancelled else { return }
+        let store = self.store
         artworkCache.cancelRequests(
             except: Set(
                 ([playbackIdentity] + preloads.map(\.identity)).map { $0 + "|cache:\(store.mediaCache.token())" }))
-        let store = store
         let cache = artworkCache
         let requests = preloads.map { preload in
             (preload.identity, playbackBindings(track: preload.track, sources: store.sources))
