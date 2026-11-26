@@ -14,11 +14,14 @@ struct PlaybackQualitySegments: NSViewRepresentable {
                                       target: context.coordinator, action: #selector(Coordinator.select(_:)))
         // Match the system segmented tab bar used by Favorites' TabView.
         view.segmentStyle = .automatic
+        // The tabs role is declared by the macOS 27 SDK (AppKit 2775).
+        #if canImport(AppKit, _version: 2775)
         if #available(macOS 27.0, *) {
             // TabView uses this role: transparent unselected tabs and the system's
             // moving selection indicator, rather than individual value-selection bezels.
             view.role = .tabs
         }
+        #endif
         // The enclosing inline control already supplies the glass panel. Do not draw
         // another segmented-control bezel inside it, including on macOS 27's tab role.
         view.cell?.isBordered = false

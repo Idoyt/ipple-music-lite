@@ -52,7 +52,9 @@ import SwiftUI
         precondition(segments.segmentCount == 3 && segments.selectedSegment == 0)
         precondition(segments.segmentStyle == .automatic)
         precondition(segments.cell?.isBordered == false, "segments must not draw a second background inside the glass panel")
+        #if canImport(AppKit, _version: 2775)
         if #available(macOS 27.0, *) { precondition(segments.role == .tabs) }
+        #endif
         if #available(macOS 26.0, *) { precondition(segments.controlSize == .extraLarge) }
         precondition(segments.font?.pointSize == 13)
         precondition(segments.isEnabled(forSegment: 0) && !segments.isEnabled(forSegment: 1))
