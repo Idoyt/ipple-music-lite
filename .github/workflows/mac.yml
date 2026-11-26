@@ -1,0 +1,8 @@
+name: macOS player
+on: [push, pull_request]
+jobs:
+  native:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - run: make mac-test qq-test mac-build

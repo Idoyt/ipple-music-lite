@@ -1,0 +1,94 @@
+// !$*UTF8*$!
+{
+  archiveVersion = 1;
+  classes = {};
+  objectVersion = 77;
+  objects = {
+    A00000000000000000000001 = {
+      isa = PBXProject;
+      attributes = { BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 1600; };
+      buildConfigurationList = A00000000000000000000002;
+      compatibilityVersion = "Xcode 16.0";
+      developmentRegion = zh_CN;
+      hasScannedForEncodings = 0;
+      knownRegions = (en, zh_CN, Base);
+      mainGroup = A00000000000000000000003;
+      minimizedProjectReferenceProxies = 1;
+      packageReferences = (A00000000000000000000020);
+      preferredProjectObjectVersion = 77;
+      productRefGroup = A00000000000000000000004;
+      projectDirPath = "";
+      projectRoot = "";
+      targets = (A00000000000000000000005);
+    };
+    A00000000000000000000002 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000010, A00000000000000000000011); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+    A00000000000000000000003 = { isa = PBXGroup; children = (A00000000000000000000006, A00000000000000000000023, A00000000000000000000004); sourceTree = "<group>"; };
+    A00000000000000000000004 = { isa = PBXGroup; children = (A00000000000000000000007); name = Products; sourceTree = "<group>"; };
+    A00000000000000000000005 = {
+      isa = PBXNativeTarget;
+      buildConfigurationList = A00000000000000000000008;
+      buildPhases = (A00000000000000000000009, A0000000000000000000000A, A0000000000000000000000B, A00000000000000000000025);
+      buildRules = ();
+      dependencies = ();
+      fileSystemSynchronizedGroups = (A00000000000000000000006);
+      name = IppleMusicMac;
+      packageProductDependencies = (A00000000000000000000021);
+      productName = "Ipple Music";
+      productReference = A00000000000000000000007;
+      productType = "com.apple.product-type.application";
+    };
+    A00000000000000000000006 = { isa = PBXFileSystemSynchronizedRootGroup; path = Sources/IppleMusicMac; sourceTree = "<group>"; };
+    A00000000000000000000007 = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ipple Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+    A00000000000000000000008 = { isa = XCConfigurationList; buildConfigurations = (A00000000000000000000012, A00000000000000000000013); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+    A00000000000000000000009 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+    A0000000000000000000000A = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000022); runOnlyForDeploymentPostprocessing = 0; };
+    A0000000000000000000000B = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000024); runOnlyForDeploymentPostprocessing = 0; };
+    A00000000000000000000025 = {
+      isa = PBXShellScriptBuildPhase;
+      alwaysOutOfDate = 1;
+      buildActionMask = 2147483647;
+      files = ();
+      inputPaths = ();
+      name = "Prepare player runtime";
+      outputPaths = ();
+      runOnlyForDeploymentPostprocessing = 0;
+      shellPath = /bin/sh;
+      shellScript = "set -eu\n/usr/bin/python3 \"$SRCROOT/scripts/prepare-mac-qq.py\" --bundle \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n";
+    };
+    A00000000000000000000010 = { isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; ONLY_ACTIVE_ARCH = YES; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 15.0; SWIFT_VERSION = 6.0; SWIFT_STRICT_CONCURRENCY = complete; }; name = Debug; };
+    A00000000000000000000011 = { isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; ONLY_ACTIVE_ARCH = YES; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 15.0; SWIFT_VERSION = 6.0; SWIFT_STRICT_CONCURRENCY = complete; }; name = Release; };
+    A00000000000000000000012 = { isa = XCBuildConfiguration; buildSettings = {
+      ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      CODE_SIGN_IDENTITY = "-";
+      ENABLE_APP_SANDBOX = NO;
+      ENABLE_USER_SCRIPT_SANDBOXING = NO;
+      ENABLE_HARDENED_RUNTIME = YES;
+      EXECUTABLE_NAME = IppleMusicMac;
+      GENERATE_INFOPLIST_FILE = NO;
+      INFOPLIST_FILE = Resources/Info.plist;
+      PRODUCT_BUNDLE_IDENTIFIER = org.ipplemusic.player;
+      PRODUCT_NAME = "Ipple Music";
+      SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+    }; name = Debug; };
+    A00000000000000000000013 = { isa = XCBuildConfiguration; buildSettings = {
+      ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+      CODE_SIGN_IDENTITY = "-";
+      ENABLE_APP_SANDBOX = NO;
+      ENABLE_USER_SCRIPT_SANDBOXING = NO;
+      ENABLE_HARDENED_RUNTIME = YES;
+      EXECUTABLE_NAME = IppleMusicMac;
+      GENERATE_INFOPLIST_FILE = NO;
+      INFOPLIST_FILE = Resources/Info.plist;
+      PRODUCT_BUNDLE_IDENTIFIER = org.ipplemusic.player;
+      PRODUCT_NAME = "Ipple Music";
+      SWIFT_OPTIMIZATION_LEVEL = "-O";
+    }; name = Release; };
+    A00000000000000000000020 = { isa = XCLocalSwiftPackageReference; relativePath = "."; };
+    A00000000000000000000021 = { isa = XCSwiftPackageProductDependency; package = A00000000000000000000020; productName = MusicCore; };
+    A00000000000000000000022 = { isa = PBXBuildFile; productRef = A00000000000000000000021; };
+    A00000000000000000000023 = { isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Resources/AppIcon.icon; sourceTree = "<group>"; };
+    A00000000000000000000024 = { isa = PBXBuildFile; fileRef = A00000000000000000000023; };
+  };
+  rootObject = A00000000000000000000001;
+}

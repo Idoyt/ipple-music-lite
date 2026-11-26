@@ -1,0 +1,29 @@
+{
+  "fill": {
+    "linear-gradient": [
+      "srgb:0.361,0.459,0.744,1.0",
+      "srgb:0.251,0.334,0.641,1.0"
+    ],
+    "orientation": {
+      "start": {"x": 0.0, "y": 0.0},
+      "stop": {"x": 1.0, "y": 1.0}
+    }
+  },
+  "groups": [
+    {
+      "name": "Ribbon",
+      "layers": [
+        {
+          "name": "Ribbon",
+          "image-name": "Ribbon.png",
+          "glass": false
+        }
+      ],
+      "specular": false,
+      "shadow": {"kind": "neutral", "opacity": 0.0}
+    }
+  ],
+  "supported-platforms": {
+    "squares": ["macOS"]
+  }
+}
